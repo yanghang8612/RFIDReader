@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="switch_label">
+        <item>true</item>
+        <item>false</item>
+    </string-array>
+    <string-array name="reader_power">
+        <item>15dBm</item>
+        <item>16dBm</item>
+        <item>17dBm</item>
+        <item>18dBm</item>
+        <item>19dBm</item>
+        <item>20dBm</item>
+        <item>21dBm</item>
+        <item>22dBm</item>
+        <item>23dBm</item>
+        <item>24dBm</item>
+        <item>25dBm</item>
+        <item>26dBm</item>
+    </string-array>
+    <string-array name="reader_q_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+    </string-array>
+    <string-array name="tag_lifecycle">
+        <item>1Min</item>
+        <item>2Min</item>
+        <item>3Min</item>
+        <item>4Min</item>
+        <item>5Min</item>
+        <item>6Min</item>
+        <item>7Min</item>
+        <item>8Min</item>
+        <item>9Min</item>
+    </string-array>
+    <string-array name="reader_rest">
+        <item>50ms</item>
+        <item>45ms</item>
+        <item>40ms</item>
+        <item>35ms</item>
+        <item>30ms</item>
+        <item>25ms</item>
+        <item>20ms</item>
+        <item>15ms</item>
+        <item>10ms</item>
+    </string-array>
+    <string-array name="reader_interval">
+        <item>10ms</item>
+        <item>9ms</item>
+        <item>8ms</item>
+        <item>7ms</item>
+        <item>6ms</item>
+        <item>5ms</item>
+        <item>4ms</item>
+        <item>3ms</item>
+        <item>2ms</item>
+        <item>1ms</item>
+    </string-array>
+    <string-array name="reader_time">
+        <item>20</item>
+        <item>19</item>
+        <item>18</item>
+        <item>17</item>
+        <item>16</item>
+        <item>15</item>
+        <item>14</item>
+        <item>13</item>
+        <item>12</item>
+        <item>11</item>
+        <item>10</item>
+        <item>9</item>
+        <item>8</item>
+        <item>7</item>
+        <item>6</item>
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+</resources>
