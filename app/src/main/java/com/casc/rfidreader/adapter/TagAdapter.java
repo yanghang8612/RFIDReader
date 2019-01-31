@@ -1,6 +1,5 @@
 package com.casc.rfidreader.adapter;
 
-import android.graphics.Color;
 import android.support.annotation.Nullable;
 
 import com.casc.rfidreader.R;
@@ -20,11 +19,8 @@ public class TagAdapter extends BaseQuickAdapter<Tag, BaseViewHolder> {
     @Override
     protected void convert(BaseViewHolder helper, Tag item) {
         helper.setText(R.id.tv_no, String.valueOf(helper.getAdapterPosition() + 1))
-                .setText(R.id.tv_pc, item.getPc())
-                .setText(R.id.tv_epc, item.getEpc())
-                .setText(R.id.tv_crc, item.getCrc())
-                .setText(R.id.tv_rssi, item.getRssi())
-                .setText(R.id.tv_cnt, item.getCnt())
-                .setBackgroundColor(R.id.llc_item_tag_root, Color.parseColor(CommonUtils.generateGradientRedColor(item.getNoneCnt())));
+                .setText(R.id.tv_epc, CommonUtils.bytesToHex(item.getEPC()))
+                .setText(R.id.tv_rssi, String.valueOf(item.getRSSI()))
+                .setText(R.id.tv_cnt, String.valueOf(item.getCnt()));
     }
 }

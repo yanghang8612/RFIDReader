@@ -7,11 +7,12 @@
     android:layout_height="wrap_content">
 
     <android.support.v7.widget.LinearLayoutCompat
+        android:theme="@style/AppTheme.TagText"
         android:id="@+id/llc_item_tag_root"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="4dp">
 
         <TextView
             android:id="@+id/tv_no"
@@ -22,28 +23,12 @@
             android:text="1" />
 
         <TextView
-            android:id="@+id/tv_pc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="30 00" />
-
-        <TextView
             android:id="@+id/tv_epc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:gravity="center"
             android:text="30 30 30 30 30 30 30 30 30 30" />
-
-        <TextView
-            android:id="@+id/tv_crc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="8D 7F" />
 
         <TextView
             android:id="@+id/tv_rssi"

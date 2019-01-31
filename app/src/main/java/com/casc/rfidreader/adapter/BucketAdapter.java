@@ -17,8 +17,7 @@ public class BucketAdapter extends BaseQuickAdapter<Bucket, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, Bucket item) {
-        helper.setText(R.id.tv_bucket_time, item.getBucket_time())
-                .setText(R.id.tv_bucket_epc, item.getBucket_epc())
-                .setText(R.id.tv_bucket_tid, item.getBucket_TID());
+        helper.setText(R.id.actv_bucket_no, String.valueOf(helper.getAdapterPosition() + 1))
+                .setText(R.id.actv_bucket_epc, item.getBucket_epc());
     }
 }

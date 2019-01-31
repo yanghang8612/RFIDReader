@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <LinearLayout
+        android:theme="@style/AppTheme.ConfigText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_status_normal"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/config_item_height"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="@dimen/fragment_config_label_width"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/config_sensor_switch"
+                android:theme="@style/AppTheme.CommonText" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/config_item_margin"
+                android:layout_weight="1"
+                android:gravity="start|center">
+
+                <Switch
+                    android:id="@+id/sw_reader_sensor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/config_item_height"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="@dimen/fragment_config_label_width"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/config_reader_power_label"
+                android:theme="@style/AppTheme.CommonText" />
+
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:id="@+id/spn_reader_power"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/config_item_margin" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/config_item_height"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="@dimen/fragment_config_label_width"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/config_reader_q_value_label"
+                android:theme="@style/AppTheme.CommonText" />
+
+            <com.weiwangcn.betterspinner.library.BetterSpinner
+                android:id="@+id/spn_reader_q_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/config_item_margin" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save_config"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="保存"
+        android:theme="@style/ButtonPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

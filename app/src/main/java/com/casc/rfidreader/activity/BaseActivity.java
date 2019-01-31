@@ -9,52 +9,23 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.casc.rfidreader.R;
-import com.casc.rfidreader.message.MultiStatusMessage;
 import com.casc.rfidreader.utils.ActivityCollector;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
-
-import butterknife.BindView;
-import butterknife.OnClick;
-
 public abstract class BaseActivity extends AppCompatActivity {
-
-    @BindView(R.id.iv_reader_status) ImageView mReaderStatusIv;
-    @BindView(R.id.iv_network_status ) ImageView mNetworkStatusIv;
-    @BindView(R.id.iv_platform_status) ImageView mPlatformStatusIv;
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void onMessageEvent(MultiStatusMessage message) {
-        mReaderStatusIv.setImageResource(message.readerStatus ?
-                R.drawable.ic_connection_normal : R.drawable.ic_connection_abnormal);
-        mNetworkStatusIv.setImageResource(message.networkStatus ?
-                R.drawable.ic_connection_normal : R.drawable.ic_connection_abnormal);
-        mPlatformStatusIv.setImageResource(message.platformStatus ?
-                R.drawable.ic_connection_normal : R.drawable.ic_connection_abnormal);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityCollector.addActivity(this);
-        EventBus.getDefault().register(this);
+        //EventBus.getDefault().register(this);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ActivityCollector.removeActivity(this);
-    }
-
-    @OnClick(R.id.iv_setting)
-    void onSettingButtonClicked() {
-        ConfigActivity.actionStart(this);
     }
 
     /**

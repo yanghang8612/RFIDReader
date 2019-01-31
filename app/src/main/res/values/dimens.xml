@@ -1,7 +1,12 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+
+    <dimen name="fragment_task_button_height">48dp</dimen>
 
     <dimen name="toolbar_height">48dp</dimen>
     <dimen name="toolbar_title_size">20sp</dimen>
@@ -16,4 +21,6 @@
     <dimen name="item_config_text_size">12sp</dimen>
     <dimen name="item_config_padding">8dp</dimen>
     <dimen name="item_config_height">36dp</dimen>
+    <dimen name="fragment_config_label_width">100dp</dimen>
+
 </resources>

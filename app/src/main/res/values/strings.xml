@@ -1,33 +1,20 @@
 <resources>
     <string name="app_name">RFID调试工具</string>
-    <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
     <string name="prompt_username">用户名</string>
     <string name="prompt_password">密码</string>
     <string name="action_sign_in">登录</string>
 
-    <string name="reader_connection_status_label">读写器连接状态</string>
-    <string name="network_connection_status_label">互联网连接状态</string>
-    <string name="platform_connection_status_label">平台连接状态</string>
-
-    <string name="config_link_label">工位</string>
     <string name="config_tag_lifecycle_label">标签生命周期</string>
     <string name="config_blank_interval_label">空白期间隔</string>
     <string name="config_discovery_interval_label">最小时间间隔</string>
-    <string name="config_tid_switch">是否读取TID</string>
     <string name="config_sensor_switch">传感器开关</string>
-    <string name="config_reader_power_label">读写器发射功率</string>
-    <string name="config_reader_q_value_label">读写器Q值</string>
+    <string name="config_reader_power_label">发射功率</string>
+    <string name="config_reader_q_value_label">Q值</string>
     <string name="config_reader_send_interval_label">读写器发送间隔</string>
-    <string name="config_main_platform_addr_label">主平台地址</string>
-    <string name="config_standby_platform_addr">备用平台地址</string>
     <string name="config_reader_id_label">读写器ID</string>
-    <string name="config_longitude_label">经度</string>
-    <string name="config_latitude_label">纬度</string>
-    <string name="config_height_label">高度</string>
-    <string name="config_reader_mac_label">读写器蓝牙MAC地址</string>
-    <string name="config_reader_list_label">可用蓝牙设备列表</string>
+
     <string name="save_config_button_text">保存</string>
     <string name="resume_button_text">返回</string>
 </resources>

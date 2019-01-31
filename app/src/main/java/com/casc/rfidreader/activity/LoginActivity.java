@@ -1,15 +1,18 @@
 package com.casc.rfidreader.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
-import android.widget.EditText;
 
 import com.casc.rfidreader.MyParams;
 import com.casc.rfidreader.R;
-import com.casc.rfidreader.helper.ConfigHelper;
 import com.casc.rfidreader.helper.NetHelper;
+import com.casc.rfidreader.helper.SpHelper;
 import com.casc.rfidreader.helper.param.Reply;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,20 +23,31 @@ import retrofit2.Response;
 
 public class LoginActivity extends BaseActivity {
 
-    @BindView(R.id.act_username) EditText mUsernameAct;
-    @BindView(R.id.et_password) EditText mPasswordEt;
+    private static final String TAG = LoginActivity.class.getSimpleName();
+
+    public static void actionStart(Context context) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        context.startActivity(intent);
+    }
+
+    @BindView(R.id.tb_login) Toolbar mToolbar;
+    @BindView(R.id.met_username) MaterialEditText mUsernameMet;
+    @BindView(R.id.met_password) MaterialEditText mPasswordMet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
+        setTitle("登录");
+        setSupportActionBar(mToolbar);
+        mUsernameMet.setText(SpHelper.getString(MyParams.S_USERNAME));
     }
 
     @OnClick(R.id.btn_sign_in)
     void onSignInButtonClicked() {
-        final String username = mUsernameAct.getText().toString();
-        final String password = mPasswordEt.getText().toString();
+        final String username = mUsernameMet.getText().toString();
+        final String password = mPasswordMet.getText().toString();
 
         if (TextUtils.isEmpty(username)) {
             showToast("用户名不能为空");
@@ -48,8 +62,9 @@ public class LoginActivity extends BaseActivity {
                     } else if (response.body() == null || response.body().getCode() != 200) {
                         showToast("用户名或密码错误");
                     } else {
-                        ConfigHelper.setParam(MyParams.S_USERNAME, username);
+                        SpHelper.setParam(MyParams.S_USERNAME, username);
                         MainActivity.actionStart(LoginActivity.this);
+                        finish();
                     }
                 }
 

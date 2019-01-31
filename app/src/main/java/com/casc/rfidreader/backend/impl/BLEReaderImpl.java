@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.util.Log;
 
 import com.casc.rfidreader.MyVars;
+import com.casc.rfidreader.message.ReaderConnectMessage;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -79,20 +80,20 @@ public class BLEReaderImpl extends BaseReaderImpl {
             while (true) {
                 try {
                     if (mState == STATE_CONNECTED) {
-                        Thread.sleep(10);
+                        Thread.sleep(1000);
                     } else {
                         Set<BluetoothDevice> pairedDevices = mBLEAdapter.getBondedDevices();// 获取本机已配对设备
                         if (pairedDevices != null && pairedDevices.size() > 0) {
                             for (BluetoothDevice device : pairedDevices) {
-                                Log.i(TAG, "Find reader, try connect");
-                                mBLESocket = device.createInsecureRfcommSocketToServiceRecord(MY_UUID);
-                                mBLESocket.connect();
-                                mInStream = mBLESocket.getInputStream();
-                                mOutStream = mBLESocket.getOutputStream();
-                                mState = STATE_CONNECTED;
-                                Log.i(TAG, "Reader connected");
-                                EventBus.getDefault().post(MyVars.status.setReaderStatus(true));
-                                break;
+                                if (device.getName().equals("UL05")) {
+                                    mBLESocket = device.createInsecureRfcommSocketToServiceRecord(MY_UUID);
+                                    mBLESocket.connect();
+                                    mInStream = mBLESocket.getInputStream();
+                                    mOutStream = mBLESocket.getOutputStream();
+                                    mState = STATE_CONNECTED;
+                                    EventBus.getDefault().post(new ReaderConnectMessage(true));
+                                    break;
+                                }
                             }
                         }
                     }

@@ -1,7 +1,6 @@
 package com.casc.rfidreader;
 
 import com.casc.rfidreader.backend.TagReader;
-import com.casc.rfidreader.message.MultiStatusMessage;
 
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -16,8 +15,6 @@ public class MyVars {
     public static TagReader bleReader = null;
 
     public static ScheduledExecutorService executor = null;
-
-    public static MultiStatusMessage status = new MultiStatusMessage();
 
     public static TagReader getReader() {
         if (usbReader.isConnected()) {

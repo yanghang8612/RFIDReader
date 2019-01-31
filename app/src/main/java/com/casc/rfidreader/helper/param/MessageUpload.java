@@ -1,7 +1,7 @@
 package com.casc.rfidreader.helper.param;
 
 import com.casc.rfidreader.MyParams;
-import com.casc.rfidreader.helper.ConfigHelper;
+import com.casc.rfidreader.helper.SpHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +17,13 @@ public class MessageUpload {
     private List<Bucket> bucket_info = new ArrayList<>();
 
     public MessageUpload() {
-        this.username = ConfigHelper.getParam(MyParams.S_USERNAME);
-        this.taskid = ConfigHelper.getParam(MyParams.S_TASKID);
+        this.username = SpHelper.getString(MyParams.S_USERNAME);
+        this.taskid = SpHelper.getString(MyParams.S_TASKID);
     }
 
     public MessageUpload(String remarks) {
-        this.username = ConfigHelper.getParam(MyParams.S_USERNAME);
-        this.taskid = ConfigHelper.getParam(MyParams.S_TASKID);
+        this.username = SpHelper.getString(MyParams.S_USERNAME);
+        this.taskid = SpHelper.getString(MyParams.S_TASKID);
         this.remarks = remarks;
     }
 
